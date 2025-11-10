@@ -1,2 +1,3 @@
-# supabase-training
-Supabase training
+# supabase-next-demo
+
+Supabase next demo

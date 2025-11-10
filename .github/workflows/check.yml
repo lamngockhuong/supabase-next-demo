@@ -1,0 +1,22 @@
+name: Check Project Setup
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.18.1
+      - run: pnpm install
+        working-directory: web
+      - run: pnpm build
+        working-directory: web
